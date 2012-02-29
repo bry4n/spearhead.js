@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Spearhead</title>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="spearhead.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+      var App = Spearhead.Application.extend({
+        initialize: function() {
+          console.log("My name is", this.options.name);
+        },
+        el: 'div',
+        events: {
+          'click .test': 'hello'
+        },
+        hello: function() {
+          $(this).text("BOOOYAH!!!!");
+        }
+      });
+      $(document).ready(function() {
+        var app = new App({name: "Bryan"});
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      It's all about click click click... <u><a class="test">click here</a></u>
+    </div>
+  </body>
+</html>
